@@ -15,15 +15,21 @@ connectDB();
 const bootcamps = require('./routes/bootcamps')
 
 
+
 //Instance Of Express
 const app = express();
 
+
+
+//Body Parser
+app.use(express.json());
 
 //Logging MiddleWare and  Morgan
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
   //app.use(logger);
 }
+
 
 
 //Mount Routes
